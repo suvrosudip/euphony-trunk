@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title> Euphony </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script>
+		// Definte the start time variable
+		var startTime;
+		function display() {
+			// later record end time
+			var endTime = new Date();
+			// time difference in ms
+			var timeDiff = endTime - startTime;
+			// strip the miliseconds
+				timeDiff /= 1000;
+				// get seconds
+				var seconds = Math.round(timeDiff % 60);
+				// remove seconds from the date
+				timeDiff = Math.floor(timeDiff / 60);
+				// get minutes
+				var minutes = Math.round(timeDiff % 60);
+				// remove minutes from the date
+				timeDiff = Math.floor(timeDiff / 60);
+				// get hours
+				var hours = Math.round(timeDiff % 24);
+				// remove hours from the date
+				timeDiff = Math.floor(timeDiff / 24);
+				// the rest of timeDiff is number of days
+				var days = timeDiff;
+				$(".time").text("Time elapsed: " + minutes +" mins, " + seconds + " secs");
+				setTimeout(display, 1000);
+				}
+		
+		// Ajax Script to load songs php script and redirect to the player file
+		$(document).ready(function(){
+				$.ajax({        // call php script
+				url: 'loadSongs.php',
+				type: 'GET',        
+				contentType: 'html'
+			}).success(function(data){
+					// remove loading image and add content received from php 
+				//$('div#content').html(data);
+				window.location = "player.html";
+
+			}).error(function(jqXHR, textStatus, errorThrown){
+					// in case something went wrong, show error
+				$('div#error_msg').append('Sorry, something went wrong: ' + textStatus + ' (' + errorThrown + ')');
+			});
+			});		
+	</script>	
+</head>
+<body onLoad="startTime = new Date(); setTimeout(display, 1000);" style="background-color: #1db954">		
+    <div id="error_msg"> </div>
+	<div id="splash"> 
+		<center>
+			<b> Euphony </b>
+			<h3 style="font-family: myfont; font-size: 25px"> Syncing...</h3> 
+			<div class="time" style="font-size: 20px"></div>
+		</center>
+		
+	<br/>
+    </div>
+	
+	<div id="content">
+		<div class="cssload-container">
+			<div class="cssload-whirlpool"></div>
+	</div>
+</body>
+</html>
