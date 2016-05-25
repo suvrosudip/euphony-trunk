@@ -1,0 +1,41 @@
+EUPHONY SET UP 
+
+1. Flash Yocto Linux on to drive letter: https://software.intel.com/en-us/iot/hardware/edison/downloads
+2. Install Apache2 and PHP:
+	root@edison:~# echo "src/gz all http://repo.opkg.net/edison/repo/all" > /etc/opkg/base-feeds.conf  
+	root@edison:~# echo "src/gz edison http://repo.opkg.net/edison/repo/edison" >> /etc/opkg/base-feeds.conf  
+	root@edison:~# echo "src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32" >> /etc/opkg/base-feeds.conf  
+	root@edison:~# opkg update  
+	root@edison:~# opkg install apache2
+	
+	root@edison:~# echo src/gz all http://repo.opkg.net/edison/repo/all > /etc/opkg/base-feeds.conf  
+root@edison:~# echo src/gz edison http://repo.opkg.net/edison/repo/edison >> /etc/opkg/base-feeds.conf  
+root@edison:~# echo src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32 >> /etc/opkg/base-feeds.conf  
+root@edison:~# opkg update  
+root@edison:~# opkg install apache2  
+root@edison:~# systemctl reenable apache2  
+root@edison:~# systemctl restart apache2  
+root@edison:~# reboot  
+
+3. Install the Boot Scripts (Ref: http://stephaniemoyerman.com/?p=41)
+		/etc/init.d
+		initializeEuphony.sh
+		chmod +x /etc/init.d/initializeEuphony.sh
+		#!/bin/sh
+		systemctl stop wpa_supplicant
+		systemctl start hostapd
+		#echo 46 > /sys/class/gpio/export
+		#echo out > /sys/class/gpio/gpio131/direction
+		#systemctl enable gps.service
+		#systemctl start gps.service
+		
+		root@edison:/etc/init.d# update-rc.d initializeEuphony.sh defaults
+Adding system startup for /etc/init.d/wifi.sh
+
+
+4. Start Apache2 server
+	systemctl start apache2 and systemctl stop apache2 starts and stops respectively
+	Use systemctl enable apache2 to make it persist, and system disable apache2 to remove from the
+5. Update Apache2 server path to /media
+	update httpd.config
+		

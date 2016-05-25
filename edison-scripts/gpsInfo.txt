@@ -1,0 +1,13 @@
+Timestamp: 050418.00Latitude: 42.285707599999995, Longitude: 83.1447833
+Timestamp: 050419.00Latitude: 42.285706899999994, Longitude: 83.1447841
+Timestamp: 050420.00Latitude: 42.2857068, Longitude: 83.14478460000001
+Timestamp: 050421.00Latitude: 42.285706899999994, Longitude: 83.14478489999999
+Timestamp: 050422.00Latitude: 42.285706899999994, Longitude: 83.14478530000001
+Timestamp: 050423.00Latitude: 42.2857068, Longitude: 83.1447857
+Timestamp: 050424.00Latitude: 42.285707, Longitude: 83.1447857
+Timestamp: 050425.00Latitude: 42.2857068, Longitude: 83.14478600000001
+Timestamp: 050426.00Latitude: 42.2857063, Longitude: 83.1447861
+Timestamp: 050427.00Latitude: 42.285705799999995, Longitude: 83.1447859
+Timestamp: 050428.00Latitude: 42.285705, Longitude: 83.1447862
+Timestamp: 050429.00Latitude: 42.2857045, Longitude: 83.1447862
+Timestamp: 050430.00Latitude: 42.285704100000004, Longitude: 83.1447862
