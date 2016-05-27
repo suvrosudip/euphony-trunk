@@ -75,26 +75,22 @@
 		<nav class="navbar navbar-black navbar-fixed-top" style="background-color: #000">
 		  <div class="container-fluid">
 			<div class="navbar-header">
-			 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar">---</span>
-				<span class="icon-bar">---</span>
-				<span class="icon-bar">---</span> 
-			  </button>
+			
 			  <a class="navbar-brand" href="#"><div id="logobrand"> <b> <center> Euphony </center> </b></div></a>
+			  
 			</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-			 
+				 
 				
 				
-		  <ul class="nav navbar-nav navbar-right" id="rightOptions">  
-				<li><a href="changePassword.php" style="background-color: #000000; color: #fff; "> Change WiFi Password</a></li>
-				<li><a href="getGPSLocation.php" style="background-color: #000000; color: #fff; "> Locate Device via GPS</a></li>
-			  </ul>
-			</div>
 		  </div>
-		  <div align="center" style="background-color: #1db954; color: #000000; ">
-			<h3> <a href="#" onClick="loadSongsRT()">Songs</a> &nbsp; &nbsp;|&nbsp;&nbsp;<a href="#" onClick="loadArtists()">Artists </a> &nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onClick="loadAlbumsPHP()">Albums </a></h3>
+		 
+		  <div align="center" style="background-color: #1db954; color: #000000">
+					
+			<h3> <a href="#" onClick="loadSongsRT()">Songs</a> &nbsp; &nbsp;|&nbsp;&nbsp;<a href="#" onClick="loadArtists()">Artists </a> &nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onClick="loadAlbumsPHP()">Albums </a>		 	
+			
+			</h3>
 		</div>
+		
 		</nav>
 		
 	
@@ -257,9 +253,13 @@
 		</tbody>
 	</table>
 	
-	<table class="table" style="margin-bottom: 10px; background-color: black">
-		<tr id="controls"> &nbsp; &nbsp; <button id="backwardButton" class="backward" onclick="backward()"> </button>&nbsp; &nbsp; &nbsp; &nbsp;  <button id="playButton" class="play" onclick="playPause('player')"> </button> &nbsp; &nbsp; &nbsp; &nbsp;<button id="stopButton" class="stop" onclick="stopSong();"> </button> &nbsp; &nbsp; &nbsp; &nbsp; <button id="forwardButton" class="forward" onclick="forward()"> </button> </tr>
+	<table class="table" style="margin-bottom: 10px; background-color: black">  
+		<tr id="controls"> &nbsp; &nbsp; <button id="backwardButton" class="backward" onclick="backward()"> </button>&nbsp; &nbsp; &nbsp; &nbsp;  <button id="playButton" class="play" onclick="playPause('player')"> </button> &nbsp; &nbsp; &nbsp; &nbsp;<button id="stopButton" class="stop" onclick="stopSong();"> </button> &nbsp; &nbsp; &nbsp; &nbsp; <button id="forwardButton" class="forward" onclick="forward()"> </button>
+			 
+		
+		</tr>
 	</table>
+	
 		<table class="table" style="color: #1db954; margin-bottom: 3px">
 		
 			
@@ -271,6 +271,17 @@
 					<output id="artist" style="font-size: 14px;" class="truncate"></output>  
 					<output id="album" style="font-size: 12px;" class="truncate"></output>
 				</td>
+				<td>  AUTOPLAY <label class="switch">
+						<input class="switch-input" type="checkbox" />
+						<span class="switch-label" data-on="ON" data-off="OFF"></span> 
+						<span class="switch-handle"></span>
+			</label> 
+			SHUFFLE <label class="switch">
+						<input class="switch-input" type="checkbox" />
+						<span class="switch-label" data-on="ON" data-off="OFF"></span> 
+						<span class="switch-handle"></span>
+			</label>
+			</td> 
 				
 				
 							
@@ -282,6 +293,8 @@
 
 	</center>
 </div>
+
+
 	
 </body>
 </html>
