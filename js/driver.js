@@ -57,18 +57,38 @@ function updateTime(){
     //Updates the track progress div.
     document.getElementById('trackProgress').style.width = Math.round(percentageOfSlider) + "px";
 	
-	if(percentageOfSong==1.0)
+	
+	var STATE_AUTOPLAY = document.getElementById("SIGNAL_AUTOPLAY").checked;
+	var STATE_SHUFFLE = document.getElementById("SIGNAL_SHUFFLE").checked;
+	var TOTAL_SONGS = document.getElementById("totalSongs").value;
+	
+	// AutoPlay & Shuffle Logic
+	if(percentageOfSong==1.0 && STATE_AUTOPLAY == true)
 	{
-		var countTR = 10 * currentSongCount;
-		var row = document.getElementById(countTR);
-		currentSongCount++;
-		updateSource(currentSongCount);
-		row.className = "";
-		countTR = 10 * currentSongCount;
-		row = document.getElementById(countTR);
-		row.className = "active";
+		if(STATE_SHUFFLE == false) {
+			var countTR = 10 * currentSongCount;
+			var row = document.getElementById(countTR);
+			currentSongCount++;
+			updateSource(currentSongCount);
+			row.className = "";
+			countTR = 10 * currentSongCount;
+			row = document.getElementById(countTR);
+			row.className = "active";
+		}
+		else
+		{
+			var countTR = 10 * currentSongCount;
+			var row = document.getElementById(countTR);
+			currentSongCount = Math.floor((Math.random() * TOTAL_SONGS) + 1);
+			updateSource(currentSongCount);
+			row.className = "";
+			countTR = 10 * currentSongCount;
+			row = document.getElementById(countTR);
+			row.className = "active";
+		}
 		
 	}
+	
 	
 	
 }
