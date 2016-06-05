@@ -39,6 +39,9 @@ function playPause(id){
     }
 }
 
+function gotoRow(val){ 
+document.getElementById('songsList').style.top=document.getElementById('row'+val).offsetTop*-1+'px'; }
+
 //Updates the current time function so it reflects where the user is in the song.
 //This function is called whenever the time is updated.  This keeps the visual in sync with the actual time.
 function updateTime(){
@@ -74,6 +77,10 @@ function updateTime(){
 			countTR = 10 * currentSongCount;
 			row = document.getElementById(countTR);
 			row.className = "active";
+			var scrollRow = countTR - 30;
+			var rowToScroll = document.getElementById(scrollRow);
+			rowToScroll.scrollIntoView(true);
+			
 		}
 		else
 		{
@@ -85,6 +92,10 @@ function updateTime(){
 			countTR = 10 * currentSongCount;
 			row = document.getElementById(countTR);
 			row.className = "active";
+			var scrollRow = countTR - 30;
+			var rowToScroll = document.getElementById(scrollRow);
+			rowToScroll.scrollIntoView(true);
+			
 		}
 		
 	}
@@ -92,6 +103,8 @@ function updateTime(){
 	
 	
 }
+
+
 
 
 //Sets the location of the song based off of the percentage of the slider clicked.
@@ -133,6 +146,9 @@ function forward(){
 		countTR = 10 * currentSongCount;
 		row = document.getElementById(countTR);
 		row.className = "active";
+		var scrollRow = countTR - 30;
+		var rowToScroll = document.getElementById(scrollRow);
+		rowToScroll.scrollIntoView(true);
 		
 		
 		
@@ -148,16 +164,21 @@ function backward(){
 		countTR = 10 * currentSongCount;
 		row = document.getElementById(countTR);
 		row.className = "active";
+		var scrollRow = countTR - 30;
+		var rowToScroll = document.getElementById(scrollRow);
+		rowToScroll.scrollIntoView(true);
 }
 
 function highlightSong(countTR){
-	if (countTR==10)
+	if (countTR==20)
 	{
-		document.getElementById(10* currentSongCount).className = "active";
-		document.getElementById(10* previousSongCount).className="";
+		document.getElementById(countTR).className = "active";
+		//alert(previousSongCount);
+		if(previousSongCount!=0) {document.getElementById(10* previousSongCount).className="";}
 	}
 	else
 	{
+
 		document.getElementById(10* previousSongCount).className="";
 		document.getElementById(10* currentSongCount).className = "active";
 		
@@ -166,7 +187,6 @@ function highlightSong(countTR){
 	
 
 }
-
 
 
 
