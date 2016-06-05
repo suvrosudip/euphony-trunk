@@ -1,17 +1,19 @@
 
 Euphony New Bugs List
-#1 First click song would not get highlighted
-#2 10, 20, 30 songs cannot play - new bug now 14, 24, cant play [REPRO]
+#1 First click song would not get highlighted [SOLVED]
+#2 10, 20, 30 songs cannot play - new bug now 14, 24, cant play
 #3 List Songs by filename only for Songs [SOLVED]
 #4 Album Art for not null tracks disappears after one null is played [SOLVED]
-#5 Sync takes a lot of time in embedded hardware and sometimes wouldn't sync at all
+#5 Sync takes a lot of time in embedded hardware [IN PROGRESS - 2 GB took 5 mins to sync]
 #6 Placeholder album art does not reflect in the background of the current playing song [SOLVED]
-#7 Without placeholder songslist.json file, unable to sync
+#7 -30 for auto scrolling is causing null in for 100,200,300 ... values
 
 
 NEW FEATURES:
 #1 Shuffle [DONE]
 #2 Autoplay Toggle ON/OFF [DONE]
-#3 Smaller Media Player UI [DEPRECIATED]
+#3 Smaller Media Player UI [CANCELLED]
 #4 Change Password UI & Edison Scripts
 #5 Playlist
+#6 Scrolling to the active song [DONE]
+#7 Search List for Songs, Artists, Albums
